@@ -15,4 +15,7 @@ interface DAOAccess {
     @Query("SELECT * FROM Login WHERE Username =:username")
     fun getLoginDetails(username: String?) : LiveData<LoginTableModel>
 
+    @Query("Select * From Login ")
+    suspend fun getUserDetails(loginTableModel: List<LoginTableModel>)
+
 }
